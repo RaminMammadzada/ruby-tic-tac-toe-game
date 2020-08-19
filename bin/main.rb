@@ -62,4 +62,3 @@ puts "Player1 please enter location(1-9) to puts x there!"
 player2_move = gets.chomp
 game.update_board(player2_move, player_2)
 game.print_board()
-
