@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98c978b3-02cb-4846-8d54-bf94025b9c65" name="Default Changelist" comment="" />
+    <list default="true" id="98c978b3-02cb-4846-8d54-bf94025b9c65" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Game.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +27,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
@@ -90,6 +97,10 @@
     </state>
     <state width="1355" height="230" key="GridCell.Tab.0.right/-1399.258.1399.877/0.23.1920.1057@-1399.258.1399.877" timestamp="1597875431989" />
     <state width="1357" height="230" key="GridCell.Tab.0.right/-1399.258.1399.877/0.23.1920.1057@0.23.1920.1057" timestamp="1597937897422" />
+    <state x="508" y="80" width="824" height="807" key="find.popup" timestamp="1597939130566">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="508" y="80" width="824" height="807" key="find.popup/-1399.258.1399.877/0.23.1920.1057@0.23.1920.1057" timestamp="1597939130566" />
     <state x="-1035" y="448" width="670" height="676" key="search.everywhere.popup" timestamp="1597866684270">
       <screen x="-1399" y="258" width="1399" height="877" />
     </state>
