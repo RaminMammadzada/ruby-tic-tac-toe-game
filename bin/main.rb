@@ -15,16 +15,23 @@ game = Game.new(player_1, player_2)
 
 puts "Welcome to the Tic - Tac - Toe game #{player_1.name} and #{player_2.name}"
 
-puts"It is #{player_1.name}'s turn to play now."
-puts "#{player_1.name}, please enter location(1-9) to puts x there!"
-player1_move = gets.chomp
-game.update_board(player1_move, player_1)
-game.print_board()
+4.times do ||
+  puts "It is #{player_1.name}'s turn to play now."
+  puts "#{player_1.name}, please enter location(1-9) to puts x there!"
+  player1_move = gets.chomp
+  game.update_board(player1_move, player_1)
+  game.print_board()
 
-puts
+  puts
 
-puts"It is #{player_2.name}'s turn to play now."
-puts "#{player_2.name}, please enter location(1-9) to puts x there!"
-player2_move = gets.chomp
-game.update_board(player2_move, player_2)
-game.print_board()
+  puts"It is #{player_2.name}'s turn to play now."
+  puts "#{player_2.name}, please enter location(1-9) to puts x there!"
+  player2_move = gets.chomp
+  game.update_board(player2_move, player_2)
+  game.print_board()
+end
+
+puts ""
+
+puts "Congrats! #{player_1.name} is a winner!"
+
