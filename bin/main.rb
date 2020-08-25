@@ -1,6 +1,5 @@
-#!/usr/bin/env ruby
-require '../lib/player'
-require '../lib/game'
+require '../lib/Player'
+require '../lib/Game'
 
 puts 'Please enter player1 name: '
 player_1_name = gets.chomp
@@ -14,10 +13,11 @@ game = Game.new(player1, player2)
 
 puts "Welcome to the Tic - Tac - Toe game #{player1.name} and #{player2.name}"
 
-4.times do
+loop do
   puts "It is #{player1.name}'s turn to play now."
   puts "#{player1.name}, please enter location(1-9) to puts x there!"
   player1_move = gets.chomp
+  input = game.check_input(player1_move)
   game.update_board(player1_move, player1)
   game.print_board
 

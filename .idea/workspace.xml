@@ -4,8 +4,7 @@
     <list default="true" id="98c978b3-02cb-4846-8d54-bf94025b9c65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/player.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Game.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,8 @@
       <option name="presentableId" value="Default" />
       <updated>1597865300181</updated>
       <workItem from="1597865305242" duration="1611000" />
+      <workItem from="1598367414304" duration="2848000" />
+      <workItem from="1598371409515" duration="35000" />
     </task>
     <servers />
   </component>

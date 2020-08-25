@@ -28,4 +28,8 @@ class Game
       @board[move] = 'o'
     end
   end
+
+  def check_input(user_move)
+    return user_move >= 1 && user_move <=9
+  end
 end
