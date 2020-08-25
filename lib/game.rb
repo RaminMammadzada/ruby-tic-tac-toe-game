@@ -1,5 +1,4 @@
 # This is a class which all of the methods about user interface will be in
-# rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
 class Game
   attr_accessor :board
   def initialize(player1, player2)
