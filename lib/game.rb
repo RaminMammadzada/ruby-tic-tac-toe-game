@@ -12,10 +12,10 @@ class Game
   def print_board
     print @board['1'] + '|' + @board['2'] + '|' + @board['3']
     puts
-    puts '-- + -- + --'
+    puts '-+-+-'
     print @board['4'] + '|' + @board['5'] + '|' + @board['6']
     puts
-    puts '-- + -- + --'
+    puts '-+-+-'
     print @board['7'] + '|' + @board['8'] + '|' + @board['9']
   end
 
@@ -29,7 +29,11 @@ class Game
     end
   end
 
-  def check_input(user_move)
-    return user_move >= 1 && user_move <=9
+  def input_is_valid?(user_move)
+    return user_move.to_i >= 1 && user_move.to_i <=9
+  end
+
+  def is_blank?(location)
+    return @board[location] == ' '
   end
 end
