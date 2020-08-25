@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 # This is a class which all of the methods about user interface will be in
+# rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
 class Game
   attr_accessor :board
   def initialize(player1, player2)
@@ -30,14 +33,40 @@ class Game
   end
 
   def input_is_valid?(user_move)
-    return user_move.to_i >= 1 && user_move.to_i <=9
+    user_move.to_i >= 1 && user_move.to_i <= 9
   end
 
-  def is_blank?(location)
-    return @board[location] == ' '
+  def blank?(location)
+    @board[location] == ' '
   end
 
-  def is_any_empty?
-    @board.values.any?(" ")
+  def any_empty?
+    @board.values.any?(' ')
+  end
+
+  def move(player)
+    puts "It is #{player.name}'s turn to play now."
+    puts "#{player.name}, please enter location(1-9) to puts x there!"
+    player_move = ''
+
+    loop do
+      player_move = gets.chomp
+
+      if input_is_valid?(player_move)
+        if blank?(player_move)
+          break
+        else
+          puts 'That location is full, please enter the blank location!'
+        end
+      else
+        puts 'Please enter the valid number as explained above!'
+      end
+    end
+
+    update_board(player_move, player)
+    print_board
+    puts
   end
 end
+
+# rubocop:enable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
