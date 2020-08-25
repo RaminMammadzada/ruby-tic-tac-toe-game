@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This is a class which all of the methods about user interface will be in
 # rubocop:disable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
 class Game
