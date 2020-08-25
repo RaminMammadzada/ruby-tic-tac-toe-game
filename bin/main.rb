@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative '../lib/Player'
 require_relative '../lib/Game'
@@ -29,5 +29,5 @@ loop do
     break
   end
 end
-=======
+
 puts 'Hello world!'
