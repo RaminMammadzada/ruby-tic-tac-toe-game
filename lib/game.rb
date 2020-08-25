@@ -64,6 +64,10 @@ class Game
     print_board
     puts
   end
+
+  def check_winner()
+
+  end
 end
 
 # rubocop:enable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
