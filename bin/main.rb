@@ -33,6 +33,11 @@ loop do
 
   game.update_board(player1_move, player1)
   game.print_board
+  puts 
+  if !game.is_any_empty?
+    puts "It's draw!"
+    break
+  end
 
   puts ''
   puts '- - - - - - - -'
@@ -58,8 +63,8 @@ loop do
   game.update_board(player2_move, player2)
   game.print_board
   puts ''
+  if !game.is_any_empty?
+    puts "It's draw!"
+    break
+  end
 end
-
-puts ''
-
-puts "Congrats! #{player1.name} is a winner! "
