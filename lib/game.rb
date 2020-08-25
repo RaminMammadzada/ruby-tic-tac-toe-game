@@ -36,4 +36,8 @@ class Game
   def is_blank?(location)
     return @board[location] == ' '
   end
+
+  def is_any_empty?
+    @board.values.any?(" ")
+  end
 end
