@@ -8,7 +8,16 @@ class Game
   end
 
   def input_is_valid?(user_move)
-    user_move.to_i >= 1 && user_move.to_i <= 9
+    if user_move.to_i >= 1 && user_move.to_i <= 9
+      if blank?(user_move)
+        true
+      else
+        puts 'That location is full, please enter the blank location!'
+        false
+      end
+    else
+      false
+    end
   end
 
   def any_empty?
@@ -22,6 +31,7 @@ class Game
 
     loop do
       player_move = gets.chomp
+      break if input_is_valid?(player_move)
 
       if input_is_valid?(player_move)
         if @board.blank?(player_move)
@@ -44,4 +54,4 @@ class Game
   end
 end
 
-# rubocop:enable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
+# rubocop:enable
