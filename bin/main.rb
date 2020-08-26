@@ -27,5 +27,3 @@ loop do
     break
   end
 end
-
-puts 'Hello world!'

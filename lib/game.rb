@@ -30,11 +30,20 @@ class Game
   end
 
   def input_is_valid?(user_move)
-    user_move.to_i >= 1 && user_move.to_i <= 9
+    if user_move.to_i >= 1 && user_move.to_i <= 9
+      if blank?(user_move)
+        return true
+      else
+        puts 'That location is full, please enter the blank location!'
+        return false
+      end
+    else
+      return false
+    end
   end
 
   def blank?(location)
-    @board[location] == ' '
+    @board[location] == ' ' # this will return true ONLY if the box in spesified location is empty
   end
 
   def any_empty?
@@ -50,11 +59,7 @@ class Game
       player_move = gets.chomp
 
       if input_is_valid?(player_move)
-        if blank?(player_move)
-          break
-        else
-          puts 'That location is full, please enter the blank location!'
-        end
+        break
       else
         puts 'Please enter the valid number as explained above!'
       end
