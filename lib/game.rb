@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative './Board'
 # This is a class which all of the methods about user interface will be in
 class Game
