@@ -69,6 +69,10 @@ class Game
     update_board(player_move, player)
     print_board
   end
+
+  def check_winner()
+
+  end
 end
 
 # rubocop:enable
