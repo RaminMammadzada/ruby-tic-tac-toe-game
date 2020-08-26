@@ -52,30 +52,34 @@ class Game
     'draw'
   end
 
-  def assign_winner(arr1, arr2, arr3)
-    if arr1.all?(@player1.tag) || \
-       arr2.all?(@player1.tag) || \
-       arr3.all?(@player1.tag)
-      @player1.is_winner = 1
-    elsif arr1.all?(@player2.tag) || \
-       arr2.all?(@player2.tag) || \
-       arr3.all?(@player2.tag)
-      @player2.is_winner = 1
-    end
-  end
-
   def check_horizontal
     horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
     horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
     horizontal3 = [@board.board['7'], @board.board['8'], @board.board['9']]
-    assign_winner(horizontal1, horizontal2, horizontal3)
+    if horizontal1.all?(@player1.tag) || \
+       horizontal2.all?(@player1.tag) || \
+       horizontal3.all?(@player1.tag)
+      @player1.is_winner = 1
+    elsif horizontal1.all?(@player2.tag) || \
+       horizontal2.all?(@player2.tag) || \
+       horizontal3.all?(@player2.tag)
+      @player2.is_winner = 1
+    end
   end
 
   def check_vertical
     vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
     vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
     vertical3 = [@board.board['3'], @board.board['6'], @board.board['9']]
-    assign_winner(vertical1, vertical2, vertical3)
+    if vertical1.all?(@player1.tag) || \
+       vertical2.all?(@player1.tag) || \
+       vertical3.all?(@player1.tag)
+      @player1.is_winner = 1
+    elsif vertical1.all?(@player2.tag) || \
+       vertical2.all?(@player2.tag) || \
+       vertical3.all?(@player2.tag)
+      @player2.is_winner = 1
+    end
   end
 
   def check_diagonal

@@ -17,7 +17,8 @@ Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 30
 Metrics/CyclomaticComplexity:
-  Max: 2000
+  ExcludedMethods: ['check_horizontal', 'check_vertical']
+  Max: 300
 
 
 Style/Documentation:
