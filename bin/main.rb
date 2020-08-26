@@ -3,11 +3,11 @@ require_relative '../lib/Game'
 
 puts 'Please enter player1 name: '
 player_1_name = gets.chomp
-player1 = Player.new(player_1_name)
+player1 = Player.new(player_1_name, 'x')
 
 puts 'Please enter player2 name: '
 player_2_name = gets.chomp
-player2 = Player.new(player_2_name)
+player2 = Player.new(player_2_name, 'o')
 
 game = Game.new(player1, player2)
 

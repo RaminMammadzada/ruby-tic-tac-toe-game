@@ -20,12 +20,12 @@ class Game
   end
 
   def update_board(move, player)
-    if @board[move] == 'x' || @board[move] == 'o'
+    if @board[move] == @player1.tag || @board[move] == @player2.tag
       puts 'Please try the empty boxes!'
     elsif player == @player1
-      @board[move] = 'x'
+      @board[move] = @player1.tag
     else
-      @board[move] = 'o'
+      @board[move] = @player2.tag
     end
   end
 
