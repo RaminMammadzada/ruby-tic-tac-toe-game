@@ -48,7 +48,6 @@ class Game
     check_diagonal
     check_horizontal
     check_vertical
-
     if @player1.is_winner
       @winner = @player1.name
       @player1.name
@@ -64,33 +63,33 @@ class Game
   end
 
   def check_horizontal
-    horizontal_1 = [@board.board['1'], @board.board['2'], @board.board['3']]
-    horizontal_2 = [@board.board['4'], @board.board['5'], @board.board['6']]
-    horizontal_3 = [@board.board['7'], @board.board['8'], @board.board['9']]
-    if horizontal_1.all?(@player1.tag) || horizontal_2.all?(@player1.tag) || horizontal_3.all?(@player1.tag)
+    horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
+    horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
+    horizontal3 = [@board.board['7'], @board.board['8'], @board.board['9']]
+    if horizontal1.all?(@player1.tag) || horizontal2.all?(@player1.tag) || horizontal3.all?(@player1.tag)
       @player1.is_winner = 1
     end
-    if horizontal_1.all?(@player2.tag) || horizontal_2.all?(@player2.tag) || horizontal_3.all?(@player2.tag)
+    if horizontal1.all?(@player2.tag) || horizontal2.all?(@player2.tag) || horizontal3.all?(@player2.tag)
       @player2.is_winner = 1
     end
   end
 
   def check_vertical
-    vertical_1 = [@board.board['1'], @board.board['4'], @board.board['7']]
-    vertical_2 = [@board.board['2'], @board.board['5'], @board.board['8']]
-    vertical_3 = [@board.board['3'], @board.board['6'], @board.board['9']]
-    if vertical_1.all?(@player1.tag) || vertical_2.all?(@player1.tag) || vertical_3.all?(@player1.tag)
+    vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
+    vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
+    vertical3 = [@board.board['3'], @board.board['6'], @board.board['9']]
+    if vertical1.all?(@player1.tag) || vertical2.all?(@player1.tag) || vertical3.all?(@player1.tag)
       @player1.is_winner = 1
     end
-    if vertical_1.all?(@player2.tag) || vertical_2.all?(@player2.tag) || vertical_3.all?(@player2.tag)
+    if vertical1.all?(@player2.tag) || vertical2.all?(@player2.tag) || vertical3.all?(@player2.tag)
       @player2.is_winner = 1
     end
   end
 
   def check_diagonal
-    diagonal_1 = [@board.board['1'], @board.board['5'], @board.board['9']]
-    diagonal_2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    @player1.is_winner = 1 if diagonal_1.all?(@player1.tag) || diagonal_2.all?(@player1.tag)
-    @player2.is_winner = 1 if diagonal_1.all?(@player2.tag) || diagonal_2.all?(@player2.tag)
+    diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
+    diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
+    @player1.is_winner = 1 if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
