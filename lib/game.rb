@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# rubocop:disable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
 require_relative './Board'
 # This is a class which all of the methods about user interface will be in
 class Game
@@ -66,10 +65,14 @@ class Game
     horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
     horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
     horizontal3 = [@board.board['7'], @board.board['8'], @board.board['9']]
-    if horizontal1.all?(@player1.tag) || horizontal2.all?(@player1.tag) || horizontal3.all?(@player1.tag)
+    if horizontal1.all?(@player1.tag) || \
+       horizontal2.all?(@player1.tag) || \
+       horizontal3.all?(@player1.tag)
       @player1.is_winner = 1
     end
-    if horizontal1.all?(@player2.tag) || horizontal2.all?(@player2.tag) || horizontal3.all?(@player2.tag)
+    if horizontal1.all?(@player2.tag) || \
+       horizontal2.all?(@player2.tag) || \
+       horizontal3.all?(@player2.tag)
       @player2.is_winner = 1
     end
   end
@@ -78,10 +81,14 @@ class Game
     vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
     vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
     vertical3 = [@board.board['3'], @board.board['6'], @board.board['9']]
-    if vertical1.all?(@player1.tag) || vertical2.all?(@player1.tag) || vertical3.all?(@player1.tag)
+    if vertical1.all?(@player1.tag) || \
+       vertical2.all?(@player1.tag) || \
+       vertical3.all?(@player1.tag)
       @player1.is_winner = 1
     end
-    if vertical1.all?(@player2.tag) || vertical2.all?(@player2.tag) || vertical3.all?(@player2.tag)
+    if vertical1.all?(@player2.tag) || \
+       vertical2.all?(@player2.tag) || \
+       vertical3.all?(@player2.tag)
       @player2.is_winner = 1
     end
   end
@@ -89,7 +96,12 @@ class Game
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    @player1.is_winner = 1 if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
-    @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
+    if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+      @player1.is_winner = 1
+    end
+    if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
+      @player2.is_winner = 1
+    end
   end
 end
+# rubocop:enable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
