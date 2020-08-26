@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This is a class which all of the methods about user interface will be in
 class Game
   attr_accessor :board
@@ -9,14 +11,18 @@ class Game
     @player2 = player2
   end
 
+  def create_line_in_board(num)
+    print @board[(num + 1).to_s] + \
+          '|' + @board[(num + 2).to_s] + \
+          '|' + @board[(num + 3).to_s]
+  end
+
   def print_board
-    print @board['1'] + '|' + @board['2'] + '|' + @board['3']
-    puts
-    puts '-+-+-'
-    print @board['4'] + '|' + @board['5'] + '|' + @board['6']
-    puts
-    puts '-+-+-'
-    print @board['7'] + '|' + @board['8'] + '|' + @board['9']
+    [0, 3, 6].each do |num|
+      create_line_in_board(num)
+      puts
+      puts '-+-+-'
+    end
   end
 
   def update_board(move, player)
@@ -32,18 +38,18 @@ class Game
   def input_is_valid?(user_move)
     if user_move.to_i >= 1 && user_move.to_i <= 9
       if blank?(user_move)
-        return true
+        true
       else
         puts 'That location is full, please enter the blank location!'
-        return false
+        false
       end
     else
-      return false
+      false
     end
   end
 
   def blank?(location)
-    @board[location] == ' ' # this will return true ONLY if the box in spesified location is empty
+    @board[location] == ' '
   end
 
   def any_empty?
@@ -57,18 +63,14 @@ class Game
 
     loop do
       player_move = gets.chomp
+      break if input_is_valid?(player_move)
 
-      if input_is_valid?(player_move)
-        break
-      else
-        puts 'Please enter the valid number as explained above!'
-      end
+      puts 'Please enter the valid number as explained above!'
     end
 
     update_board(player_move, player)
     print_board
-    puts
   end
 end
 
-# rubocop:enable Metrics/AbcSize,Metrics/MethodLength,Style/GuardClause
+# rubocop:enable
