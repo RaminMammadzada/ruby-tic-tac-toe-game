@@ -1,5 +1,5 @@
-require_relative '../lib/Player'
-require_relative '../lib/Game'
+require_relative '../lib/player'
+require_relative '../lib/game'
 
 puts 'Please enter player1 name: '
 player_1_name = gets.chomp
