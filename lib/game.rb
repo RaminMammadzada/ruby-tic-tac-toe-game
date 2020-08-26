@@ -1,36 +1,10 @@
+require_relative './Board'
 # This is a class which all of the methods about user interface will be in
 class Game
-  attr_accessor :board
   def initialize(player1, player2)
-    @board = { '1' => ' ', '2' => ' ', '3' => ' ',
-               '4' => ' ', '5' => ' ', '6' => ' ',
-               '7' => ' ', '8' => ' ', '9' => ' ' }
     @player1 = player1
     @player2 = player2
-  end
-
-  def create_line_in_board(num)
-    print @board[(num + 1).to_s] + \
-          '|' + @board[(num + 2).to_s] + \
-          '|' + @board[(num + 3).to_s]
-  end
-
-  def print_board
-    [0, 3, 6].each do |num|
-      create_line_in_board(num)
-      puts
-      puts '-+-+-'
-    end
-  end
-
-  def update_board(move, player)
-    if @board[move] == @player1.tag || @board[move] == @player2.tag
-      puts 'Please try the empty boxes!'
-    elsif player == @player1
-      @board[move] = @player1.tag
-    else
-      @board[move] = @player2.tag
-    end
+    @board = Board.new
   end
 
   def input_is_valid?(user_move)
@@ -46,12 +20,8 @@ class Game
     end
   end
 
-  def blank?(location)
-    @board[location] == ' '
-  end
-
   def any_empty?
-    @board.values.any?(' ')
+    @board.values.any?(" ")
   end
 
   def move(player)
@@ -63,11 +33,24 @@ class Game
       player_move = gets.chomp
       break if input_is_valid?(player_move)
 
-      puts 'Please enter the valid number as explained above!'
+      if input_is_valid?(player_move)
+        if @board.blank?(player_move)
+          break
+        else
+          puts 'That location is full, please enter the blank location!'
+        end
+      else
+        puts 'Please enter the valid number as explained above!'
+      end
     end
 
-    update_board(player_move, player)
-    print_board
+    @board.update_board(player_move, player)
+    @board.print_board
+    puts
+  end
+
+  def check_winner()
+
   end
 
   def check_winner()
