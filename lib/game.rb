@@ -44,4 +44,28 @@ class Game
 
   end
 
+  def check_horizontal()
+    horizontal_1 = [@board.board['1'], @board.board['2'], @board.board['3']]
+    horizontal_2 = [@board.board['4'], @board.board['5'], @board.board['6']]
+    horizontal_3 = [@board.board['7'], @board.board['8'], @board.board['9']]
+    print "#{@player1.name} wins!" if horizontal_1.all('x') || horizontal_2.all('x') || horizontal_3.all('x')
+    print "#{@player1.name} wins!" if horizontal_1.all('o') || horizontal_2.all('o') || horizontal_3.all('o')
+
+  end
+
+  def check_vertical()
+    vertical_1 = [@board.board['1'], @board.board['4'], @board.board['7']]
+    vertical_2 = [@board.board['2'], @board.board['5'], @board.board['8']]
+    vertical_3 = [@board.board['3'], @board.board['6'], @board.board['9']]
+    print "#{@player1.name} wins!" if vertical_1.all('x') || vertical_2.all('x') || vertical_3.all('x')
+    print "#{@player1.name} wins!" if vertical_1.all('o') || vertical_2.all('o') || vertical_3.all('o')
+  end
+
+  def check_diagonal()
+    diagonal_1 = [@board.board['1'], @board.board['5'], @board.board['9']]
+    diagonal_2 = [@board.board['3'], @board.board['5'], @board.board['7']]
+    print "#{@player1.name} wins!" if diagonal_1.all('x') || diagonal_2.all('x')
+    print "#{@player2.name} wins!" if diagonal_1.all('o') || diagonal_2.all('o')
+  end
+
 end
