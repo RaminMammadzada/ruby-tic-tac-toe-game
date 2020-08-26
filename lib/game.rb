@@ -1,4 +1,5 @@
-# rubocop:disable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
+# frozen_string_literal: true
+
 require_relative './Board'
 # This is a class which all of the methods about user interface will be in
 class Game
@@ -7,7 +8,6 @@ class Game
     @player1 = player1
     @player2 = player2
     @board = Board.new(@player1, @player2)
-    @winner = ''
   end
 
   def input_is_valid?(user_move)
@@ -47,18 +47,11 @@ class Game
     check_diagonal
     check_horizontal
     check_vertical
-    if @player1.is_winner
-      @winner = @player1.name
-      @player1.name
-    elsif @player2.is_winner
-      @winner = @player2.name
-      @player2.name
-    elsif @board.any_empty?
-      ''
-    else
-      @winner = 'draw'
-      'draw'
-    end
+    @player1.name if @player1.is_winner
+    @player2.name if @player2.is_winner
+    return '' unless @board.any_empty?
+
+    'draw'
   end
 
   def check_horizontal
@@ -96,12 +89,13 @@ class Game
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    if diagonal1.all?(@player1.tag) || \
+       diagonal2.all?(@player1.tag)
       @player1.is_winner = 1
     end
-    if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
+    if diagonal1.all?(@player2.tag) || \
+       diagonal2.all?(@player2.tag)
       @player2.is_winner = 1
     end
   end
 end
-# rubocop:enable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This class is responsible to keep the game board updated
 class Board
   attr_accessor :board
