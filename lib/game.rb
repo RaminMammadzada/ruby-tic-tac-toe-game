@@ -1,12 +1,14 @@
 # This is a class which all of the methods about user interface will be in
+# rubocop:disable  Metrics/MethodLength
 class Game
-  attr_accessor :board
+  attr_accessor :board, :winner
   def initialize(player1, player2)
     @board = { '1' => ' ', '2' => ' ', '3' => ' ',
                '4' => ' ', '5' => ' ', '6' => ' ',
                '7' => ' ', '8' => ' ', '9' => ' ' }
     @player1 = player1
     @player2 = player2
+    @winner = ''
   end
 
   def create_line_in_board(num)
@@ -70,9 +72,20 @@ class Game
     print_board
   end
 
-  def check_winner()
-
+  def who_won
+    if @player1.is_winner
+      @winner = @player1.name
+      @player1.name
+    elsif @player2.is_winner
+      @winner = @player2.name
+      @player2.name
+    elsif any_empty?
+      ''
+    else
+      @winner = 'draw'
+      'draw'
+    end
   end
 end
 
-# rubocop:enable
+# rubocop:enable  Metrics/MethodLength
