@@ -8,7 +8,7 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 - [x] Miltestone 1 - Basic initial setups and linter configurations.
 - [x] Miltestone 2 - CLI user interface is implemented.
-- [ ] Miltestone 3
+- [x] Miltestone 3
 - [ ] Miltestone 4
 
 
