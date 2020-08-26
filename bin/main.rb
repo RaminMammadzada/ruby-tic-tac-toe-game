@@ -19,6 +19,10 @@ loop do
     puts "It's draw!"
     break
   end
+
+  break if game.who_won != ""
+
+
   puts ''
   puts '- - - - - - - -'
   game.move(player2)
@@ -26,4 +30,9 @@ loop do
     puts "It's draw!"
     break
   end
+
+  break if game.who_won != ""
+
 end
+
+puts "Congratulations! " + "The winner is #{game.winner}"
