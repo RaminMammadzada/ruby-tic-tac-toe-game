@@ -4,12 +4,12 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @board = Board.new
+    @board = Board.new(@player1, @player2)
   end
 
   def input_is_valid?(user_move)
     if user_move.to_i >= 1 && user_move.to_i <= 9
-      if blank?(user_move)
+      if @board.blank?(user_move)
         true
       else
         puts 'That location is full, please enter the blank location!'
@@ -21,7 +21,7 @@ class Game
   end
 
   def any_empty?
-    @board.values.any?(" ")
+    @board.board.values.any?(" ")
   end
 
   def move(player)
@@ -33,29 +33,15 @@ class Game
       player_move = gets.chomp
       break if input_is_valid?(player_move)
 
-      if input_is_valid?(player_move)
-        if @board.blank?(player_move)
-          break
-        else
-          puts 'That location is full, please enter the blank location!'
-        end
-      else
-        puts 'Please enter the valid number as explained above!'
-      end
+      puts 'Please enter the valid number as explained above!'
     end
 
     @board.update_board(player_move, player)
     @board.print_board
-    puts
   end
 
   def check_winner()
 
   end
 
-  def check_winner()
-
-  end
 end
-
-# rubocop:enable
