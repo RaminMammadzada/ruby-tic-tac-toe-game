@@ -16,7 +16,7 @@ player_2_name = Helper.validate_player_name(player_1_name, player_2_name)
 player2 = Player.new(player_2_name, 'o')
 
 game = Game.new(player1, player2)
-puts '- - - - - - - -'
+puts '..:::GAME IS STARTED:::..'
 puts "Welcome to the Tic - Tac - Toe game #{player1.name} and #{player2.name}"
 game.board.print_board
 loop do
@@ -24,7 +24,6 @@ loop do
   break if game.who_won != ''
 
   puts ''
-  puts '- - - - - - - -'
 
   game.move(player2)
   break if game.who_won != ''

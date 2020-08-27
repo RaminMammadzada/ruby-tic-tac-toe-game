@@ -1,4 +1,4 @@
-require_relative './Board'
+require_relative './board'
 # This is a class which all of the methods about user interface will be in
 class Game
   attr_reader :winner, :board
