@@ -19,6 +19,7 @@ class Board
     [0, 3, 6].each do |num|
       create_line_in_board(num)
       puts
+      next if num == 6
       puts '-+-+-'
     end
   end
