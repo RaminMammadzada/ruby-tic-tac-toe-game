@@ -20,6 +20,7 @@ class Board
       create_line_in_board(num)
       puts
       next if num == 6
+
       puts '-+-+-'
     end
   end
