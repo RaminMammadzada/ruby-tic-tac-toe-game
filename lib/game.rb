@@ -1,7 +1,7 @@
-require_relative './Board'
+require_relative './board'
 # This is a class which all of the methods about user interface will be in
 class Game
-  attr_accessor :winner, :board
+  attr_reader :winner, :board
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
