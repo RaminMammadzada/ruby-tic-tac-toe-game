@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative '../lib/Player'
 require_relative '../lib/Game'
 puts 'Please enter player1 name: '

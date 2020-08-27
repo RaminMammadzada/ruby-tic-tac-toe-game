@@ -1,4 +1,3 @@
-# rubocop:disable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
 require_relative './Board'
 # This is a class which all of the methods about user interface will be in
 class Game
@@ -86,12 +85,11 @@ class Game
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
-      @player1.is_winner = 1
-    end
-    if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
-      @player2.is_winner = 1
-    end
+    @player1.is_winner = 1 if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
+<<<<<<< HEAD
 # rubocop:enable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
+=======
+>>>>>>> d92afc46977c70e0bd6ddf3b2ede7dcf7ac5105a
