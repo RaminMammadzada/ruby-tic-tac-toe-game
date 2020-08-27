@@ -7,10 +7,14 @@ player1 = Player.new(player_1_name, 'x')
 
 puts 'Please enter player2 name: '
 player_2_name = gets.chomp
+until player_2_name != player_1_name && player_2_name != nil?
+  puts 'Be careful! Player 2 name must be different that Player 1 name!'
+  player_2_name = gets.chomp
+end
 player2 = Player.new(player_2_name, 'o')
 
 game = Game.new(player1, player2)
-
+puts '- - - - - - - -'
 puts "Welcome to the Tic - Tac - Toe game #{player1.name} and #{player2.name}"
 
 loop do
