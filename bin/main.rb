@@ -33,10 +33,10 @@ loop do
 end
 
 # if you want to say make player1 win, uncomment the following line
-  player1.is_winner = true
+player1.is_winner = true
 
-  # if you want to say make player2 win, uncomment the following line
-  player2.is_winner = false
+# if you want to say make player2 win, uncomment the following line
+player2.is_winner = false
 
 if game.who_won == 'draw'
   puts "It's a draw"
