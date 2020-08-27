@@ -8,6 +8,8 @@ class Game
     @board = Board.new(@player1, @player2)
     @winner = ''
   end
+
+  private
   def input_is_valid?(user_move)
     if user_move.to_i >= 1 && user_move.to_i <= 9
       if @board.blank?(user_move)
@@ -20,9 +22,13 @@ class Game
       false
     end
   end
+
+  private
   def any_empty?
     @board.board.values.any?(' ')
   end
+
+  public
   def move(player)
     puts "It is #{player.name}'s turn to play now."
     puts "#{player.name}, please enter location(1-9) to puts x there!"
@@ -35,6 +41,8 @@ class Game
     @board.update_board(player_move, player)
     @board.print_board
   end
+
+  public
   def who_won
     check_diagonal
     check_horizontal
@@ -52,6 +60,8 @@ class Game
       'draw'
     end
   end
+
+  private
   def check_horizontal
     horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
     horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
@@ -67,6 +77,8 @@ class Game
       @player2.is_winner = 1
     end
   end
+
+  private
   def check_vertical
     vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
     vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
@@ -82,6 +94,8 @@ class Game
       @player2.is_winner = 1
     end
   end
+
+  private
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
@@ -89,7 +103,3 @@ class Game
     @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
-<<<<<<< HEAD
-# rubocop:enable Style/GuardClause,Metrics/CyclomaticComplexity,Metrics/AbcSize,Metrics/MethodLength:
-=======
->>>>>>> d92afc46977c70e0bd6ddf3b2ede7dcf7ac5105a
