@@ -10,6 +10,8 @@ class Game
     @winner = ''
   end
 
+  private
+
   def create_line_in_board(num)
     print @board[(num + 1).to_s] + \
           '|' + @board[(num + 2).to_s] + \
@@ -55,8 +57,11 @@ class Game
     @board.values.any?(' ')
   end
 
+  public
+
   def move(player)
     puts "It is #{player.name}'s turn to play now."
+    puts
     puts "#{player.name}, please enter location(1-9) to puts x there!"
     player_move = ''
 
