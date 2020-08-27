@@ -1,16 +1,15 @@
 require_relative '../lib/player'
 require_relative '../lib/game'
+require_relative '../lib/helper'
 
 puts 'Please enter player1 name: '
 player_1_name = gets.chomp
+player_1_name = Helper.validate_player_name(player_1_name)
 player1 = Player.new(player_1_name, 'x')
 
 puts 'Please enter player2 name: '
 player_2_name = gets.chomp
-until player_2_name != player_1_name && player_2_name != nil?
-  puts 'Be careful! Player 2 name must be different that Player 1 name!'
-  player_2_name = gets.chomp
-end
+player_2_name = Helper.validate_player_name(player_1_name, player_2_name)
 player2 = Player.new(player_2_name, 'o')
 
 game = Game.new(player1, player2)
