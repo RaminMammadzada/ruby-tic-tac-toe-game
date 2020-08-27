@@ -5,11 +5,13 @@ require_relative '../lib/helper'
 
 puts 'Please enter player1 name: '
 player_1_name = gets.chomp
+player_1_name = Helper.character_only(player_1_name)
 player_1_name = Helper.validate_player_name(player_1_name)
 player1 = Player.new(player_1_name, 'x')
 
 puts 'Please enter player2 name: '
 player_2_name = gets.chomp
+player_2_name = Helper.character_only(player_2_name)
 player_2_name = Helper.validate_player_name(player_1_name, player_2_name)
 player2 = Player.new(player_2_name, 'o')
 

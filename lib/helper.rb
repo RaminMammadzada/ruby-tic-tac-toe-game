@@ -15,4 +15,12 @@ class Helper
     end
     return player_2_name
   end
+
+  def self.character_only(name)
+    until name.match?(/\A-?\d+\Z/) == false
+      puts "Please enter at least one character for player name!"
+      name = gets.chomp
+    end
+    return name
+  end
 end
