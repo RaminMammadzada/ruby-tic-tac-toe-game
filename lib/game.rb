@@ -72,6 +72,10 @@ class Game
       puts 'Please enter the valid number as explained above!'
     end
 
+    # Randomly we are making player 2 winner
+    # here when there are 4 empty boxes
+    @player2.is_winner = true if @board.values.count(' ') == 4
+
     update_board(player_move, player)
     print_board
   end

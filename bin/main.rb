@@ -32,15 +32,9 @@ loop do
   break if game.who_won != ''
 end
 
-# if you want to say make player1 win, uncomment the following line
-player1.is_winner = true
-
-# if you want to say make player2 win, uncomment the following line
-player2.is_winner = false
-
 if game.who_won == 'draw'
   puts "It's a draw"
 else
   puts "Congratulations!   \
-        The winner is #{player1.is_winner ? player1.name : player2.name} !"
+         #{player1.is_winner ? player1.name : player2.name} last move was a winner move and won the game!"
 end
