@@ -35,6 +35,6 @@ end
 if game.who_won == 'draw'
   puts "It's a draw"
 else
-  puts "Congratulations!   \
-         #{player1.is_winner ? player1.name : player2.name} last move was a winner move and won the game!"
+  puts 'Congratulations!'
+  puts "#{player1.is_winner ? player1.name : player2.name} last move was a winner move and won the game!"
 end

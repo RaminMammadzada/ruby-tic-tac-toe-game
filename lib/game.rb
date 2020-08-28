@@ -1,6 +1,5 @@
 # This is a class which all of the methods about user interface will be in
 class Game
-  attr_accessor :board, :winner
   def initialize(player1, player2)
     @board = { '1' => ' ', '2' => ' ', '3' => ' ',
                '4' => ' ', '5' => ' ', '6' => ' ',
