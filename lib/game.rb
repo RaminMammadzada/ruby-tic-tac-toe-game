@@ -16,7 +16,7 @@ class Game
       if @board.blank?(user_move)
         true
       else
-        puts 'That location is full, please enter the blank location!'
+        Main.inform_user('nonblank_input')
         false
       end
     else
@@ -31,15 +31,14 @@ class Game
   public
 
   def move(player)
-    puts "It is #{player.name}'s turn to play now."
-    puts "#{player.name}, please enter location(1-9) to puts x there!"
+    Main.inform_user('turn_info', player.name)
     player_move = ''
 
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
 
-      puts 'Please enter the valid number as explained above!'
+      Main.inform_user('invalid_input')
     end
 
     @board.update_board(player_move, player)
