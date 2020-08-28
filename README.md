@@ -4,6 +4,8 @@ Microverse Ruby Project #3 -> Tic Tac Toe game (with Object Oriented Programming
 
 # ruby-tic-tac-toe
 
+![screenshot](./images/output.png)
+
 In this project we will recreate the well known Tic-Tac-Toe game by using object oriented programming paradigm. We have 4 milestones as below:
 
 - [x] Miltestone 1 - Basic initial setups and linter configurations.
@@ -25,9 +27,6 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 - Ruby,
 - Rubocop
-
-![screenshot](./images/output.png)
-
 
 ## Live Demo
 
