@@ -16,7 +16,7 @@ class Main
   end
 
   def create_players()
-    num_array = [1,2]
+    num_array = [1, 2]
     num_array.each do |num|
       puts "Please enter player#{num} name: "
       player_name = gets.chomp
