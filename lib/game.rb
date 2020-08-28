@@ -40,7 +40,6 @@ class Game
 
       Main.inform_user('invalid_input')
     end
-
     @board.update_board(player_move, player)
     @board.print_board
   end
