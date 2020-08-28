@@ -22,7 +22,7 @@ class Main
       puts 'That location is full, please enter the blank location!'
     elsif info_type == 'turn_info'
       puts "It is #{player_name}'s turn to play now."
-      puts 'Please enter location(1-9) to puts x there!'
+      puts 'Please enter your move(x or o) in location(1-9) there!'
     elsif info_type == 'player2_namecheck'
       puts 'Be careful! Player 2 name must be different that Player 1 name'
     elsif info_type == 'character_namecheck'
