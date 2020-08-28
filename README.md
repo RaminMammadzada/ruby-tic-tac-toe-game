@@ -4,13 +4,24 @@ Microverse Ruby Project #3 -> Tic Tac Toe game (with Object Oriented Programming
 
 # ruby-tic-tac-toe
 
+![screenshot](./images/output.png)
+
 In this project we will recreate the well known Tic-Tac-Toe game by using object oriented programming paradigm. We have 4 milestones as below:
 
 - [x] Miltestone 1 - Basic initial setups and linter configurations.
 - [x] Miltestone 2 - CLI user interface is implemented.
 - [x] Miltestone 3 - Game logic is implemented and the main user interface moved to Main class.
-- [ ] Miltestone 4
+- [x] Miltestone 4 - Instructions and Rules for game
 
+# Game Rules
+
+- Two players can start game by entering their names
+- Player names should contain at least one letter
+- Game board consists of 3 by 3 grid and 9 locations.
+- x sign for game belongs to Player1 and o sign belongs to Player2
+- No player can put move in a place which is already filled
+- Game board will check if a player wins after every move
+- If no player wins it's a draw
 
 ## Built With
 
@@ -19,7 +30,7 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 ## Live Demo
 
-```Live demo will be shared after the milestone 4 is finished.```
+[Live Demo Link](https://repl.it/@remki/ruby-tic-tac-toe-game-1#bin/main.a)
 
 
 ## Getting Started
