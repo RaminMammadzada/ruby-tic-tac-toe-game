@@ -41,6 +41,11 @@ To get a local copy up and running follow these simple example steps.
 Besides the live demo link, you can run those functions in you own local environment. 
 In order to run, you need to install RUBY in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.
 Then you can clone the project by typing ```git clone https://github.com/RaminMammadzada/ruby-tic-tac-toe-game/tree/develop```
+
+### Run game
+Type ```./bin/main.rb``` in the root file of the project. 
+You can also type ```ruby bin/main.rb``` in the root file of the project.
+
 ### Run tests
 In the terminal you just have to put the following command: 
 ```ruby tests.rb```
