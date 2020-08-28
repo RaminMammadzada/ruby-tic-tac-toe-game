@@ -1,46 +1,22 @@
+require_relative './board'
 # This is a class which all of the methods about user interface will be in
 class Game
+  attr_reader :winner, :board
   def initialize(player1, player2)
-    @board = { '1' => ' ', '2' => ' ', '3' => ' ',
-               '4' => ' ', '5' => ' ', '6' => ' ',
-               '7' => ' ', '8' => ' ', '9' => ' ' }
     @player1 = player1
     @player2 = player2
+    @board = Board.new(@player1, @player2)
     @winner = ''
   end
 
   private
 
-  def create_line_in_board(num)
-    print @board[(num + 1).to_s] + \
-          '|' + @board[(num + 2).to_s] + \
-          '|' + @board[(num + 3).to_s]
-  end
-
-  def print_board
-    [0, 3, 6].each do |num|
-      create_line_in_board(num)
-      puts
-      puts '-+-+-'
-    end
-  end
-
-  def update_board(move, player)
-    if @board[move] == @player1.tag || @board[move] == @player2.tag
-      puts 'Please try the empty boxes!'
-    elsif player == @player1
-      @board[move] = @player1.tag
-    else
-      @board[move] = @player2.tag
-    end
-  end
-
   def input_is_valid?(user_move)
     if user_move.to_i >= 1 && user_move.to_i <= 9
-      if blank?(user_move)
+      if @board.blank?(user_move)
         true
       else
-        puts 'That location is full, please enter the blank location!'
+        Main.inform_user('nonblank_input')
         false
       end
     else
@@ -48,46 +24,74 @@ class Game
     end
   end
 
-  def blank?(location)
-    @board[location] == ' '
-  end
-
   def any_empty?
-    @board.values.any?(' ')
+    @board.board.values.any?(' ')
   end
 
   public
 
   def move(player)
-    puts "It is #{player.name}'s turn to play now."
-    puts
-    puts "#{player.name}, please enter location(1-9) to puts x there!"
+    Main.inform_user('turn_info', player.name)
     player_move = ''
 
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
 
-      puts 'Please enter the valid number as explained above!'
+      Main.inform_user('invalid_input')
     end
-
-    # Randomly we are making player 2 winner
-    # here when there are 4 empty boxes
-    @player2.is_winner = true if @board.values.count(' ') == 4
-
-    update_board(player_move, player)
-    print_board
+    @board.update_board(player_move, player)
+    @board.print_board
   end
 
   def who_won
+    check_diagonal
+    check_horizontal
+    check_vertical
     if @player1.is_winner
+      @winner = @player1.name
       @player1.name
     elsif @player2.is_winner
+      @winner = @player2.name
       @player2.name
-    elsif any_empty?
+    elsif @board.any_empty?
       ''
     else
+      @winner = 'draw'
       'draw'
     end
+  end
+
+  private
+
+  def control_lines_for_player(line1, line2, line3, player)
+    if line1.all?(player.tag) || \
+       line2.all?(player.tag) || \
+       line3.all?(player.tag)
+      player.is_winner = 1
+    end
+  end
+
+  def check_horizontal
+    horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
+    horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
+    horizontal3 = [@board.board['7'], @board.board['8'], @board.board['9']]
+    control_lines_for_player(horizontal1, horizontal2, horizontal3, @player1)
+    control_lines_for_player(horizontal1, horizontal2, horizontal3, @player2)
+  end
+
+  def check_vertical
+    vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
+    vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
+    vertical3 = [@board.board['3'], @board.board['6'], @board.board['9']]
+    control_lines_for_player(vertical1, vertical2, vertical3, @player1)
+    control_lines_for_player(vertical1, vertical2, vertical3, @player2)
+  end
+
+  def check_diagonal
+    diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
+    diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
+    @player1.is_winner = 1 if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
