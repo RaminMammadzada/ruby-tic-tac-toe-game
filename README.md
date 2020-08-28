@@ -26,7 +26,7 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 - Ruby,
 - Rubocop
 
-![screenshot](./images/screenshot.png)
+![screenshot](../images/screenshot.png)
 
 
 ## Live Demo
