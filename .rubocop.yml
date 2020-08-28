@@ -16,9 +16,12 @@ Metrics/ClassLength:
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
   Max: 30
+<<<<<<< HEAD
 Metrics/CyclomaticComplexity:
   ExcludedMethods: ['check_horizontal', 'check_vertical']
   Max: 300
+=======
+>>>>>>> 16290a7bffd70818c22a72bb0cf82a26c8823c19
 
 
 Style/Documentation:

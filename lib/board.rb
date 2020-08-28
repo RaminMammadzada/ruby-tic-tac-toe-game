@@ -20,18 +20,17 @@ class Board
       create_line_in_board(num)
       puts
       next if num == 6
+
       puts '-+-+-'
     end
   end
 
   def update_board(move, player)
-    if @board[move] == @player1.tag || @board[move] == @player2.tag
-      puts 'Please try the empty boxes!'
-    elsif player == @player1
-      @board[move] = @player1.tag
-    else
-      @board[move] = @player2.tag
-    end
+    @board[move] = if player == @player1
+                     @player1.tag
+                   else
+                     @player2.tag
+                   end
   end
 
   def blank?(location)
