@@ -16,17 +16,14 @@ class Main
   end
 
   def create_players()
-    puts 'Please enter player1 name: '
-    player_1_name = gets.chomp
-    player_1_name = include_characters(player_1_name)
-    player_1_name = validate_player_name(player_1_name)
-    @player1 = Player.new(player_1_name, 'x')
-
-    puts 'Please enter player2 name: '
-    player_2_name = gets.chomp
-    player_2_name = include_characters(player_2_name)
-    player_2_name = validate_player_name(player_1_name, player_2_name)
-    @player2 = Player.new(player_2_name, 'o')
+    num_array = [1,2]
+    num_array.each do |num|
+      puts "Please enter player#{num} name: "
+      player_name = gets.chomp
+      player_name = include_characters(player_name)
+      player_name = validate_player_name(player_name)
+      num == 1 ? @player1 = Player.new(player_name, 'x') : @player2 = Player.new(player_name, 'o')
+    end
   end
 
   def game_loop()
