@@ -15,14 +15,14 @@ class Main
     show_results
   end
 
-  def self.inform_user(info_type, player_name = '')
+  def self.inform_user(info_type, player = '')
     if info_type == 'invalid_input'
       puts 'Please enter the valid number as explained above!'
     elsif info_type == 'nonblank_input'
       puts 'That location is full, please enter the blank location!'
     elsif info_type == 'turn_info'
-      puts "It is #{player_name}'s turn to play now."
-      puts 'Please enter location(1-9) to puts x there!'
+      puts "It is #{player.name}'s turn to play now."
+      puts "Please enter location(1-9) to put #{player.tag} there!"
     elsif info_type == 'player2_namecheck'
       puts 'Be careful! Player 2 name must be different that Player 1 name'
     elsif info_type == 'character_namecheck'

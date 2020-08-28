@@ -31,9 +31,8 @@ class Game
   public
 
   def move(player)
-    Main.inform_user('turn_info', player.name)
+    Main.inform_user('turn_info', player)
     player_move = ''
-
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
