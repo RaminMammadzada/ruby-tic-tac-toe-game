@@ -65,6 +65,12 @@ In the terminal you just have to put the following command:
 - Twitter: [@twitterhandle](https://twitter.com/Sajjad_Ahmad14)
 - Linkedin: [linkedin](https://linkedin.com/sajjad-ahmad-86102117a/)
 
+👤 **Abdellani Youcef**
+
+- Github: [@ABDELLANI-Youcef](https://github.com/ABDELLANI-Youcef)
+ - Twitter: [@YoucefAbdellani](https://twitter.com/YoucefAbdellani) 
+- Linkedin: [linkedin](https://www.linkedin.com/in/youcef-abdellani-b79361124/)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
