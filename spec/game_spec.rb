@@ -5,7 +5,7 @@ require './lib/board'
 describe Game do
   let(:player1) {Player.new("Youcef", 'o')}
   let(:player2) {Player.new("Ramin", 'x')}
-  let(:game) {Game.new(:player1, :player2)}
+  let(:game) {Game.new(player1, player2)}
 
   describe "#initialize" do
     it 'should have board instance variable' do
@@ -117,19 +117,31 @@ describe Game do
   
   describe "#check_diagonal" do
     # chech the diagonals
-    it "should make the attribut is_winner of player1 to true" do
+    it "should make the attribute is_winner of player1 to true for 1st diagonal" do
       game.board.board['1']=player1.tag
       game.board.board['5']=player1.tag
       game.board.board['9']=player1.tag
-      # game.send(:check_diagonal)
-      expect(game.player1.tag).to eql('o')
+      game.send(:check_diagonal)
+      expect(player1.is_winner).to eql(true)
     end
-    
+
+    it "should make the attribute is_winner of player1 to true for 2nd diagonal" do
+      game.board.board['3']=player1.tag
+      game.board.board['5']=player1.tag
+      game.board.board['7']=player1.tag
+      game.send(:check_diagonal)
+      expect(player1.is_winner).to eql(true)
+    end
   end
   
   describe "#who_won" do
     # check for winner
-
+    # it 'should return the winner' do
+    #
+    #
+    #   game.who_won
+    #   expect(game.who_won).to eql('draw')
+    # end
   end
 
 end
