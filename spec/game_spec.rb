@@ -64,7 +64,7 @@ describe Game do
   end
   
   describe "#control_lines_for_player" do
-    it "should make the attribut is_winner of player2 to 1" do
+    it "should make the attribut is_winner of player2 to true" do
       game.send(:control_lines_for_player,["x","x","x"] ,["x","o","o"] , [" ","o"," "], player2)
       expect(player2.is_winner).to eql(true)
     end
@@ -78,18 +78,57 @@ describe Game do
 
   
   describe "#check_horizontal" do
+    # check rows
+    it "should make the attribut is_winner of player2 to true" do
+      game.send(:control_lines_for_player,["x","x","x"] ,["x","o","o"] , [" ","o"," "], player2)
+      expect(player2.is_winner).to eql(true)
+    end
+
+    it "should make the attribut is_winner of player1 to true" do
+      game.send(:control_lines_for_player,["x"," ","x"] ,["o","o","o"] , [" ","o","x"], player1)
+      expect(player1.is_winner).to eql(true)
+    end
+
+    it "should keep the attribut is_winner of player1 to false" do
+      game.send(:control_lines_for_player,["x"," ","x"] ,["o"," ","o"] , [" ","o","x"], player1)
+      expect(player1.is_winner).to eql(false)
+    end
     
   end
   
   describe "#check_vertical" do
+    # check columns
+    it "should make the attribut is_winner of player2 to true" do
+      game.send(:control_lines_for_player,["x","x","x"] ,["x","o","o"] , [" ","o"," "], player2)
+      expect(player2.is_winner).to eql(true)
+    end
+
+    it "should make the attribut is_winner of player1 to true" do
+      game.send(:control_lines_for_player,["x"," ","x"] ,["o","o","o"] , [" ","o","x"], player1)
+      expect(player1.is_winner).to eql(true)
+    end
+
+    it "should keep the attribut is_winner of player1 to false" do
+      game.send(:control_lines_for_player,["x"," ","x"] ,["o"," ","o"] , [" ","o","x"], player1)
+      expect(player1.is_winner).to eql(false)
+    end
     
   end
   
   describe "#check_diagonal" do
+    # chech the diagonals
+    it "should make the attribut is_winner of player1 to true" do
+      game.board.board['1']=player1.tag
+      game.board.board['5']=player1.tag
+      game.board.board['9']=player1.tag
+      # game.send(:check_diagonal)
+      expect(game.player1.tag).to eql('o')
+    end
     
   end
   
   describe "#who_won" do
+    # check for winner
 
   end
 
