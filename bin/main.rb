@@ -3,16 +3,11 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 class Main
-  def initialize; end
-
-  def start_game()
-    puts '..:::GAME IS STARTED:::..'
-    create_players
-    puts "Welcome to the Tic - Tac - Toe game #{@player1.name} and #{@player2.name}"
-    @game = Game.new(@player1, @player2)
-    @game.board.print_board
-    game_loop
-    show_results
+  def initialize
+    @game = nil
+    @player1 = nil
+    @player2 = nil
+    start_game
   end
 
   def self.inform_user(info_type, player = '')
@@ -31,6 +26,16 @@ class Main
   end
 
   private
+
+  def start_game()
+    puts '..:::GAME IS STARTED:::..'
+    create_players
+    puts "Welcome to the Tic - Tac - Toe game #{@player1.name} and #{@player2.name}"
+    @game = Game.new(@player1, @player2)
+    @game.board.print_board
+    game_loop
+    show_results
+  end
 
   def create_players()
     num_array = [1, 2]
@@ -83,5 +88,4 @@ class Main
   end
 end
 
-main = Main.new
-main.start_game
+Main.new
