@@ -1,6 +1,6 @@
 # This class is responsible to keep the game board updated
 class Board
-  attr_reader :board
+  attr_reader :board, :player1, :player2
   def initialize(player1, player2)
     @board = { '1' => ' ', '2' => ' ', '3' => ' ',
                '4' => ' ', '5' => ' ', '6' => ' ',
