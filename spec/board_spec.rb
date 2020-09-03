@@ -67,15 +67,44 @@ describe Board do
   end
 
   describe "#update_board" do
-
+    # it "update a board after modification" do
+    #   player1.tag = 'x'
+    #   player2.tag = 'o'
+    #   # board.update_board('2',assigns(:player1))
+    #   # expect { board.print_board() }.to output(" | | \n-+-+-\n | |x\n-+-+-\n | | \n").to_stdout
+    #   expect(board.player2.name).to eql('zoro')
+    # end
+    
   end
 
   describe "#blank?" do
+    it "return true if a cell is blank" do
+      expect(board.blank?('1')).to eql(true)
+    end
 
+    it "return false if a cell is not blank" do
+      board.board['1']='x'
+      expect(board.blank?('1')).to eql(false)
+    end
   end
 
   describe "#any_empty?" do
+    it "return true if there is at least one empty cell" do
+      expect(board.any_empty?).to eql(true)
+    end
 
+    it "return false if there no empty cell" do
+      board.board['1']='x'
+      board.board['2']='x'
+      board.board['3']='x'
+      board.board['4']='x'
+      board.board['5']='x'
+      board.board['6']='x'
+      board.board['7']='x'
+      board.board['8']='x'
+      board.board['9']='x'
+      expect(board.any_empty?).to eql(false)
+    end
   end
 
 end
