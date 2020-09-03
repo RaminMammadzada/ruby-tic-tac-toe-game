@@ -36,8 +36,6 @@ class Game
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
-
-      Main.inform_user('invalid_input')
     end
     @board.update_board(player_move, player)
     @board.print_board
@@ -90,7 +88,7 @@ class Game
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    @player1.is_winner = 1 if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
-    @player2.is_winner = 1 if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
+    @player1.is_winner = true if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    @player2.is_winner = true if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
