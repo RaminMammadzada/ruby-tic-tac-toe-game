@@ -64,7 +64,7 @@ class Game
     if line1.all?(player.tag) || \
        line2.all?(player.tag) || \
        line3.all?(player.tag)
-      player.is_winner = 1
+      player.is_winner = true
     end
   end
 
