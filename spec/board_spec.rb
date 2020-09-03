@@ -67,13 +67,11 @@ describe Board do
   end
 
   describe "#update_board" do
-    # it "update a board after modification" do
-    #   player1.tag = 'x'
-    #   player2.tag = 'o'
-    #   # board.update_board('2',assigns(:player1))
-    #   # expect { board.print_board() }.to output(" | | \n-+-+-\n | |x\n-+-+-\n | | \n").to_stdout
-    #   expect(board.player2.name).to eql('zoro')
-    # end
+    it "update a board after modification" do
+      board.update_board('2',player1.name)
+      expect { board.print_board() }.to output(" |#{player1.tag}| \n-+-+-\n | | \n-+-+-\n | | \n").to_stdout
+      # expect(board.player2.name).to eql('zoro')
+    end
     
   end
 
