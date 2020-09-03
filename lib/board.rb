@@ -1,6 +1,6 @@
 # This class is responsible to keep the game board updated
 class Board
-  attr_reader :board
+  attr_reader :board, :player1, :player2
   def initialize(player1, player2)
     @board = { '1' => ' ', '2' => ' ', '3' => ' ',
                '4' => ' ', '5' => ' ', '6' => ' ',
@@ -25,12 +25,9 @@ class Board
     end
   end
 
-  def update_board(move, player)
-    @board[move] = if player == @player1
-                     @player1.tag
-                   else
-                     @player2.tag
-                   end
+  def update_board(move, player_tag)
+    tag = ( player_tag == 'x' ? 'x' : 'o')
+    @board[move] = tag
   end
 
   def blank?(location)
