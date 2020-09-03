@@ -3,7 +3,14 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 class Main
-  def initialize; end
+  def initialize;
+    @game = nil
+    @player1 = nil
+    @player2 = nil
+    start_game()
+  end
+
+  private
 
   def start_game()
     puts '..:::GAME IS STARTED:::..'
@@ -29,8 +36,6 @@ class Main
       puts 'Please enter at least one character for player name!'
     end
   end
-
-  private
 
   def create_players()
     num_array = [1, 2]
@@ -83,5 +88,4 @@ class Main
   end
 end
 
-main = Main.new
-main.start_game
+Main.new
