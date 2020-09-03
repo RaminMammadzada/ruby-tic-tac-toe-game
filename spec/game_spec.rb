@@ -58,6 +58,7 @@ describe Game do
 
   describe "#move" do
     it "should update the board after a player's move, we choose location 2" do
+      puts "For this special test, please enter '2' to select the location in the board !..."
       game.move(player1)
       expect(game.board.board["2"]).to eql(player1.tag)
     end
@@ -98,18 +99,27 @@ describe Game do
   
   describe "#check_vertical" do
     # check columns
-    it "should make the attribut is_winner of player2 to true" do
-      game.send(:control_lines_for_player,["x","x","x"] ,["x","o","o"] , [" ","o"," "], player2)
+    it "should make the attribute is_winner of player2 to true" do
+      game.board.board['1']=player2.tag
+      game.board.board['4']=player2.tag
+      game.board.board['7']=player2.tag
+      game.send(:check_vertical)
       expect(player2.is_winner).to eql(true)
     end
 
-    it "should make the attribut is_winner of player1 to true" do
-      game.send(:control_lines_for_player,["x"," ","x"] ,["o","o","o"] , [" ","o","x"], player1)
+    it "should make the attribute is_winner of player1 to true" do
+      game.board.board['1']=player1.tag
+      game.board.board['4']=player1.tag
+      game.board.board['7']=player1.tag
+      game.send(:check_vertical)
       expect(player1.is_winner).to eql(true)
     end
 
-    it "should keep the attribut is_winner of player1 to false" do
-      game.send(:control_lines_for_player,["x"," ","x"] ,["o"," ","o"] , [" ","o","x"], player1)
+    it "should keep the attribute is_winner of player1 to false" do
+      game.board.board['1']=player2.tag
+      game.board.board['4']=player1.tag
+      game.board.board['7']=player2.tag
+      game.send(:check_vertical)
       expect(player1.is_winner).to eql(false)
     end
     
@@ -136,12 +146,41 @@ describe Game do
   
   describe "#who_won" do
     # check for winner
-    # it 'should return the winner' do
-    #
-    #
-    #   game.who_won
-    #   expect(game.who_won).to eql('draw')
-    # end
+    it 'should output draw when no one win the until the all boxes are full in the board' do
+      game.board.board['1']=player2.tag
+      game.board.board['2']=player1.tag
+      game.board.board['3']=player2.tag
+      game.board.board['4']=player2.tag
+      game.board.board['5']=player1.tag
+      game.board.board['6']=player1.tag
+      game.board.board['7']=player1.tag
+      game.board.board['8']=player2.tag
+      game.board.board['9']=player1.tag
+
+      game.who_won
+      expect(game.who_won).to eql('draw')
+    end
+
+    it 'should output winner name when there is a winner, in this case player2 name' do
+      game.board.board['1']=player1.tag
+      game.board.board['3']=player2.tag
+      game.board.board['4']=player1.tag
+      game.board.board['5']=player2.tag
+      game.board.board['7']=player2.tag
+
+      game.who_won
+      expect(game.who_won).to eql(player2.name)
+    end
+
+    it 'should output empty string when the game is still going on, neither winner and nor draw situation' do
+      game.board.board['1']=player1.tag
+      game.board.board['4']=player1.tag
+      game.board.board['5']=player2.tag
+      game.board.board['7']=player2.tag
+
+      game.who_won
+      expect(game.who_won).to eql('')
+    end
   end
 
 end
