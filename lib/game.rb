@@ -3,9 +3,9 @@ require_relative './board'
 class Game
   attr_reader :winner, :board, :player1, :player2
   def initialize(player1, player2)
-    @@player1 = player1
-    @@player2 = player2
-    @board = Board.new(@@player1, @@player2)
+    @player1 = player1
+    @player2 = player2
+    @board = Board.new(@player1, @player2)
     @winner = ''
   end
 
@@ -47,12 +47,12 @@ class Game
     check_diagonal
     check_horizontal
     check_vertical
-    if @@player1.is_winner
-      @winner = @@player1.name
-      @@player1.name
-    elsif @@player2.is_winner
-      @winner = @@player2.name
-      @@player2.name
+    if @player1.is_winner
+      @winner = @player1.name
+      @player1.name
+    elsif @player2.is_winner
+      @winner = @player2.name
+      @player2.name
     elsif @board.any_empty?
       ''
     else
@@ -75,22 +75,22 @@ class Game
     horizontal1 = [@board.board['1'], @board.board['2'], @board.board['3']]
     horizontal2 = [@board.board['4'], @board.board['5'], @board.board['6']]
     horizontal3 = [@board.board['7'], @board.board['8'], @board.board['9']]
-    control_lines_for_player(horizontal1, horizontal2, horizontal3, @@player1)
-    control_lines_for_player(horizontal1, horizontal2, horizontal3, @@player2)
+    control_lines_for_player(horizontal1, horizontal2, horizontal3, @player1)
+    control_lines_for_player(horizontal1, horizontal2, horizontal3, @player2)
   end
 
   def check_vertical
     vertical1 = [@board.board['1'], @board.board['4'], @board.board['7']]
     vertical2 = [@board.board['2'], @board.board['5'], @board.board['8']]
     vertical3 = [@board.board['3'], @board.board['6'], @board.board['9']]
-    control_lines_for_player(vertical1, vertical2, vertical3, @@player1)
-    control_lines_for_player(vertical1, vertical2, vertical3, @@player2)
+    control_lines_for_player(vertical1, vertical2, vertical3, @player1)
+    control_lines_for_player(vertical1, vertical2, vertical3, @player2)
   end
 
   def check_diagonal
     diagonal1 = [@board.board['1'], @board.board['5'], @board.board['9']]
     diagonal2 = [@board.board['3'], @board.board['5'], @board.board['7']]
-    @@player1.is_winner = true if diagonal1.all?(@@player1.tag) || diagonal2.all?(@@player1.tag)
-    @@player2.is_winner = true if diagonal1.all?(@@player2.tag) || diagonal2.all?(@@player2.tag)
+    @player1.is_winner = true if diagonal1.all?(@player1.tag) || diagonal2.all?(@player1.tag)
+    @player2.is_winner = true if diagonal1.all?(@player2.tag) || diagonal2.all?(@player2.tag)
   end
 end
