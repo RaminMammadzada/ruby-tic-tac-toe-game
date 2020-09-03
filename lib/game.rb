@@ -16,6 +16,7 @@ class Game
       if @board.blank?(user_move)
         true
       else
+        Main.inform_user('nonblank_input')
         false
       end
     else
@@ -30,13 +31,15 @@ class Game
   public
 
   def move(player)
+    Main.inform_user('turn_info', player)
     player_move = ''
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
 
+      Main.inform_user('invalid_input')
     end
-    @board.update_board(player_move, player.tag)
+    @board.update_board(player_move, player)
     @board.print_board
   end
 
