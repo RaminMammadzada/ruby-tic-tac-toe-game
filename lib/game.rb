@@ -34,7 +34,6 @@ class Game
     loop do
       player_move = gets.chomp
       break if input_is_valid?(player_move)
-
     end
     @board.update_board(player_move, player.tag)
     @board.print_board

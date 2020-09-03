@@ -3,23 +3,11 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 class Main
-  def initialize;
+  def initialize
     @game = nil
     @player1 = nil
     @player2 = nil
-    start_game()
-  end
-
-  private
-
-  def start_game()
-    puts '..:::GAME IS STARTED:::..'
-    create_players
-    puts "Welcome to the Tic - Tac - Toe game #{@player1.name} and #{@player2.name}"
-    @game = Game.new(@player1, @player2)
-    @game.board.print_board
-    game_loop
-    show_results
+    start_game
   end
 
   def self.inform_user(info_type, player = '')
@@ -35,6 +23,18 @@ class Main
     elsif info_type == 'character_namecheck'
       puts 'Please enter at least one character for player name!'
     end
+  end
+
+  private
+
+  def start_game()
+    puts '..:::GAME IS STARTED:::..'
+    create_players
+    puts "Welcome to the Tic - Tac - Toe game #{@player1.name} and #{@player2.name}"
+    @game = Game.new(@player1, @player2)
+    @game.board.print_board
+    game_loop
+    show_results
   end
 
   def create_players()

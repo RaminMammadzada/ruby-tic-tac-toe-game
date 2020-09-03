@@ -26,7 +26,7 @@ class Board
   end
 
   def update_board(move, player_tag)
-    tag = ( player_tag == 'x' ? 'x' : 'o')
+    tag = (player_tag == 'x' ? 'x' : 'o')
     @board[move] = tag
   end
 
