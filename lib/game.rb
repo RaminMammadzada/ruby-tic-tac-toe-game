@@ -11,34 +11,22 @@ class Game
 
   private
 
-  def input_is_valid?(user_move)
-    if user_move.to_i >= 1 && user_move.to_i <= 9
-      if @board.blank?(user_move)
-        true
-      else
-        Main.inform_user('nonblank_input')
-        false
-      end
-    else
-      false
-    end
-  end
-
   def any_empty?
     @board.board.values.any?(' ')
   end
 
   public
 
-  def move(player)
-    Main.inform_user('turn_info', player)
-    player_move = ''
-    loop do
-      player_move = gets.chomp
-      break if input_is_valid?(player_move)
+  def input_is_valid?(user_move)
+    if user_move.to_i >= 1 && user_move.to_i <= 9
+      if @board.blank?(user_move)
+        true
+      else
+        false
+      end
+    else
+      false
     end
-    @board.update_board(player_move, player)
-    @board.print_board
   end
 
   def who_won
@@ -65,7 +53,7 @@ class Game
     if line1.all?(player.tag) || \
        line2.all?(player.tag) || \
        line3.all?(player.tag)
-      player.is_winner = 1
+      player.is_winner = true
     end
   end
 

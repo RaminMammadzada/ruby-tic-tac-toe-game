@@ -48,14 +48,24 @@ class Main
     end
   end
 
+  def move(player)
+    player_move = ''
+    loop do
+      player_move = gets.chomp
+      break if @game.input_is_valid?(player_move)
+    end
+    @game.board.update_board(player_move, player.tag)
+    @game.board.print_board
+  end
+
   def game_loop()
     loop do
-      @game.move(@player1)
+      move(@player1)
       break if @game.who_won != ''
 
       puts ''
 
-      @game.move(@player2)
+      move(@player2)
       break if @game.who_won != ''
     end
   end

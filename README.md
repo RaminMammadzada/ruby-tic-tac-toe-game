@@ -32,6 +32,22 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 [Live Demo Link](https://repl.it/@remki/ruby-tic-tac-toe-game-1#bin/main.a)
 
+## Testing the game
+
+This game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. We tested all the public methods of the project Tic Tac Toe.
+
+### Install
+
+- In a terminal window type gem install rspec
+- Once rspec install has finished, go to project directory and type rspec --init
+- You will see a folder spec and a file .rspec
+- Inside spec folder you'll see a spec_helper.rb file.
+
+### Run the test
+- Open a terminal window and type rspec
+- All tests should be passed:
+![screenshot of tests](./images/tests_screenshot.png)
+
 
 ## Getting Started
 
@@ -48,7 +64,7 @@ You can also type ```ruby bin/main.rb``` in the root file of the project.
 
 ### Run tests
 In the terminal you just have to put the following command: 
-```ruby tests.rb```
+```rspec```
 
 
 ## Authors
@@ -64,6 +80,12 @@ In the terminal you just have to put the following command:
 - Github: [@githubhandle](https://github.com/SajjadAhmad14)
 - Twitter: [@twitterhandle](https://twitter.com/Sajjad_Ahmad14)
 - Linkedin: [linkedin](https://linkedin.com/sajjad-ahmad-86102117a/)
+
+👤 **Abdellani Youcef**
+
+- Github: [@ABDELLANI-Youcef](https://github.com/ABDELLANI-Youcef)
+ - Twitter: [@YoucefAbdellani](https://twitter.com/YoucefAbdellani) 
+- Linkedin: [linkedin](https://www.linkedin.com/in/youcef-abdellani-b79361124/)
 
 ## 🤝 Contributing
 
