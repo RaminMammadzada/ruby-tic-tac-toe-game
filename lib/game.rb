@@ -11,6 +11,12 @@ class Game
 
   private
 
+  def any_empty?
+    @board.board.values.any?(' ')
+  end
+
+  public
+
   def input_is_valid?(user_move)
     if user_move.to_i >= 1 && user_move.to_i <= 9
       if @board.blank?(user_move)
@@ -21,22 +27,6 @@ class Game
     else
       false
     end
-  end
-
-  def any_empty?
-    @board.board.values.any?(' ')
-  end
-
-  public
-
-  def move(player)
-    player_move = ''
-    loop do
-      player_move = gets.chomp
-      break if input_is_valid?(player_move)
-    end
-    @board.update_board(player_move, player.tag)
-    @board.print_board
   end
 
   def who_won

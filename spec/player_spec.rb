@@ -2,7 +2,8 @@ require_relative '../lib/player'
 
 describe Player do
   describe '#initialize' do
-    let(:player1) { Player.new('Ramin', 'x')}
+    let(:player1) { Player.new('Ramin', 'x') }
+
     it "return the player's name" do
       expect(player1.name).to eql('Ramin')
     end

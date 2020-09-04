@@ -12,9 +12,9 @@ describe Board do
     end
 
     it 'read the instance variable @board successfully' do
-      expect(board.board).to eql({ '1' => ' ', '2' => ' ', '3' => ' ',
-                                   '4' => ' ', '5' => ' ', '6' => ' ',
-                                   '7' => ' ', '8' => ' ', '9' => ' ' })
+      expect(board.board).to eql('1' => ' ', '2' => ' ', '3' => ' ',
+                                 '4' => ' ', '5' => ' ', '6' => ' ',
+                                 '7' => ' ', '8' => ' ', '9' => ' ')
     end
   end
 

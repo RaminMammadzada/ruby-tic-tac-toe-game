@@ -32,6 +32,9 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 [Live Demo Link](https://repl.it/@remki/ruby-tic-tac-toe-game-1#bin/main.a)
 
+## Testing the game
+
+This game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. We tested all the public methods of the project Tic Tac Toe.
 
 ## Getting Started
 
