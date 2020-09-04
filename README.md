@@ -46,7 +46,7 @@ This game was tested using [RSpec](https://rspec.info/) which is a ruby testing 
 ### Run the test
 - Open a terminal window and type rspec
 - All tests should be passed:
-
+![screenshot of tests](./images/tests_screenshot.png)
 
 
 ## Getting Started
