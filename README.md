@@ -64,7 +64,7 @@ You can also type ```ruby bin/main.rb``` in the root file of the project.
 
 ### Run tests
 In the terminal you just have to put the following command: 
-```ruby tests.rb```
+```rspec```
 
 
 ## Authors
