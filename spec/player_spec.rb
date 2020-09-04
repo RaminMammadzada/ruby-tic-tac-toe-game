@@ -1,8 +1,9 @@
-require './lib/player'
+require_relative '../lib/player'
 
 describe Player do
   describe '#initialize' do
-    let(:player1) { Player.new('Ramin', 'x')}
+    let(:player1) { Player.new('Ramin', 'x') }
+
     it "return the player's name" do
       expect(player1.name).to eql('Ramin')
     end
@@ -11,8 +12,13 @@ describe Player do
       expect(player1.tag).to eql('x')
     end
 
-    it 'return if the player is winner or not' do
+    it 'return false if the player is not winner' do
       expect(player1.is_winner).to eql(false)
+    end
+
+    it 'return true if the player is winner' do
+      player1.is_winner = true
+      expect(player1.is_winner).to eql(true)
     end
 
     it 'return name modified ' do
@@ -25,9 +31,13 @@ describe Player do
       expect(player1.tag).to eql('o')
     end
 
-    it 'return if the player is winner or not modified' do
+    it 'return true if the player is winner attribute set to true' do
       player1.is_winner = true
       expect(player1.is_winner).to eql(true)
+    end
+
+    it 'return false if the player is winner attribute is false' do
+      expect(player1.is_winner).to eql(false)
     end
   end
 end

@@ -1,10 +1,10 @@
-require './lib/board'
-require './lib/player'
+require_relative '../lib/board'
+require_relative '../lib/player'
 
 describe Board do
   let(:player1) { Player.new('Youcef', 'o') }
   let(:player2) { Player.new('Ramin', 'x') }
-  let(:board) { Board.new(:player1, :player2) }
+  let(:board) { Board.new(player1, player2) }
 
   describe '#initialize' do
     it 'creates a board instance' do
@@ -12,14 +12,10 @@ describe Board do
     end
 
     it 'read the instance variable @board successfully' do
-      expect(board.board).to eql({ '1' => ' ', '2' => ' ', '3' => ' ',
-                                   '4' => ' ', '5' => ' ', '6' => ' ',
-                                   '7' => ' ', '8' => ' ', '9' => ' ' })
+      expect(board.board).to eql('1' => ' ', '2' => ' ', '3' => ' ',
+                                 '4' => ' ', '5' => ' ', '6' => ' ',
+                                 '7' => ' ', '8' => ' ', '9' => ' ')
     end
-
-    # it "return name modified " do
-    #   expect(board.player1).to eql(:player1)
-    # end
   end
 
   describe '#create_line_in_board' do
@@ -67,7 +63,6 @@ describe Board do
     it 'update a board after modification' do
       board.update_board('2', player1.name)
       expect { board.print_board }.to output(" |#{player1.tag}| \n-+-+-\n | | \n-+-+-\n | | \n").to_stdout
-      # expect(board.player2.name).to eql('zoro')
     end
   end
 

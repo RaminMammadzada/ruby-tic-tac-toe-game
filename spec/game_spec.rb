@@ -1,6 +1,6 @@
-require './lib/game'
-require './lib/player'
-require './lib/board'
+require_relative '../lib/game'
+require_relative '../lib/player'
+require_relative '../lib/board'
 
 describe Game do
   let(:player1) { Player.new('Youcef', 'o') }
@@ -52,14 +52,6 @@ describe Game do
       game.board.board['8'] = 'x'
       game.board.board['9'] = 'x'
       expect(game.send(:any_empty?)).to eql(false)
-    end
-  end
-
-  describe '#move' do
-    it "should update the board after a player's move, we choose location 2" do
-      puts "For this special test, please enter '2' to select the location in the board !..."
-      game.move(player1)
-      expect(game.board.board['2']).to eql(player1.tag)
     end
   end
 
