@@ -12,8 +12,13 @@ describe Player do
       expect(player1.tag).to eql('x')
     end
 
-    it 'return if the player is winner or not' do
+    it 'return false if the player is not winner' do
       expect(player1.is_winner).to eql(false)
+    end
+
+    it 'return true if the player is winner' do
+      player1.is_winner = true
+      expect(player1.is_winner).to eql(true)
     end
 
     it 'return name modified ' do
