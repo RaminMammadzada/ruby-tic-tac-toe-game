@@ -45,6 +45,7 @@ This game was tested using [RSpec](https://rspec.info/) which is a ruby testing 
 ### Run the test
 - Open a terminal window and type rspec
 - All tests should be passed:
+
 ![screenshot of tests](./images/tests_screenshot.png)
 
 
@@ -83,7 +84,7 @@ In the terminal you just have to put the following command:
 👤 **Abdellani Youcef**
 
 - Github: [@ABDELLANI-Youcef](https://github.com/ABDELLANI-Youcef)
- - Twitter: [@YoucefAbdellani](https://twitter.com/YoucefAbdellani) 
+- Twitter: [@YoucefAbdellani](https://twitter.com/YoucefAbdellani)
 - Linkedin: [linkedin](https://www.linkedin.com/in/youcef-abdellani-b79361124/)
 
 ## 🤝 Contributing
