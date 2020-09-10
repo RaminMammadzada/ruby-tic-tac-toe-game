@@ -34,14 +34,13 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 ## Testing the game
 
-This game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. We tested all the public methods of the project Tic Tac Toe.
-
+This game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. All public methods are tested.
 ### Install
 
-- In a terminal window type gem install rspec
-- Once rspec install has finished, go to project directory and type rspec --init
-- You will see a folder spec and a file .rspec
-- Inside spec folder you'll see a spec_helper.rb file.
+- In a terminal window type ```gem install rspec```
+- Once rspec install has finished, go to project directory and type ```rspec --init```
+- You will see a folder spec and a file [.rspec](.rspec)
+- Inside spec folder you'll see a [spec_helper.rb](spec/spec_helper.rb) file.
 
 ### Run the test
 - Open a terminal window and type rspec
