@@ -36,8 +36,4 @@ class Board
   def blank?(location)
     @board[location] == ' '
   end
-
-  def any_empty?
-    @board.values.any?(' ')
-  end
 end

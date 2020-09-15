@@ -53,7 +53,7 @@ class Game
     elsif @player2.is_winner
       @winner = @player2.name
       @player2.name
-    elsif @board.any_empty?
+    elsif any_empty?
       ''
     else
       @winner = 'draw'
