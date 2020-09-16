@@ -14,8 +14,10 @@ describe Board do
   let(:player2) {Player.new('ahmad', 'o')}
   let(:board) {Board.new(player1, player2)}
   describe '#update_board' do
-    it "update the board with x for player1 and o for player2" do
+    it "update the board with x for player1" do
       expect(board.update_board('1', player1)).to eql('x')
+    end
+    it "update the board with o for player2" do
       expect(board.update_board('2', player2)).to eql('o')
     end
   end
@@ -43,6 +45,20 @@ describe Board do
     it "return true if a location on board is empty" do
       board.board['2'] = ' '
       expect(board.blank?('2')).to eql(true)
+    end
+  end
+
+  describe '#print_board' do
+    it "print an empty board" do
+      expect{ board.print_board }.to output(" | | \n-+-+-\n | | \n-+-+-\n | | \n").to_stdout
+    end
+    it "print board with x in location 1" do
+      board.board['1'] = 'x'
+      expect{ board.print_board }.to output("x| | \n-+-+-\n | | \n-+-+-\n | | \n").to_stdout
+    end
+    it "print board with o in location 9" do
+      board.board['9'] = 'o'
+      expect{ board.print_board }.to output(" | | \n-+-+-\n | | \n-+-+-\n | |o\n").to_stdout
     end
   end
 end
