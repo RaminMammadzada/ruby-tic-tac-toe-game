@@ -4,6 +4,12 @@ Microverse Ruby Project #3 -> Tic Tac Toe game (with Object Oriented Programming
 
 # ruby-tic-tac-toe
 
+![screenshot](./images/tests.png)
+
+- Tested #update_board, #print_board, #create_line_in_board and #blank? of Board class using Rspec
+- Tested #who_won of Game class using Rspec
+- Tests can be run using rspec or rspec --format documentation command 
+
 ![screenshot](./images/output.png)
 
 In this project we will recreate the well known Tic-Tac-Toe game by using object oriented programming paradigm. We have 4 milestones as below:
