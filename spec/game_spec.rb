@@ -1,10 +1,9 @@
 require_relative '../lib/board'
 require_relative '../lib/game'
 require_relative '../lib/player'
-
 describe Board do
   describe '#initialize' do
-    it "intitialize instance variables" do
+    it "intitialize instance variables of Board" do
       @board = {'1' => ' ', '2' => ' ', '3' => ' ',
                '4' => ' ', '5' => ' ', '6' => ' ',
                '7' => ' ', '8' => ' ', '9' => ' '}
@@ -59,6 +58,48 @@ describe Board do
     it "print board with o in location 9" do
       board.board['9'] = 'o'
       expect{ board.print_board }.to output(" | | \n-+-+-\n | | \n-+-+-\n | |o\n").to_stdout
+    end
+  end
+end
+
+describe Game do
+  let(:player1) {Player.new('sajjad', 'x')}
+  let(:player2) {Player.new('ahmad', 'o')}
+  let(:game) {Game.new(player1, player2)}
+  describe '#who_one' do
+    it "return player1 name" do
+      game.board.board['1'] = 'x'
+      game.board.board['2'] = 'x'
+      game.board.board['3'] = 'x'
+      game.who_won
+      expect(game.who_won).to eql('sajjad')
+    end
+    it "return player1 name" do
+      game.board.board['1'] = 'o'
+      game.board.board['2'] = 'o'
+      game.board.board['3'] = 'o'
+      game.who_won
+      expect(game.who_won).to eql('ahmad')
+    end
+    it "return draw" do
+      game.board.board['1'] = 'x'
+      game.board.board['2'] = 'o'
+      game.board.board['3'] = 'x'
+      game.board.board['4'] = 'o'
+      game.board.board['5'] = 'o'
+      game.board.board['6'] = 'x'
+      game.board.board['7'] = 'x'
+      game.board.board['8'] = 'x'
+      game.board.board['9'] = 'o'
+      game.who_won
+      expect(game.who_won).to eql('draw')
+    end
+    it "return draw" do
+      game.board.board['1'] = 'x'
+      game.board.board['2'] = 'o'
+      game.board.board['3'] = 'x'
+      game.who_won
+      expect(game.who_won).to eql('')
     end
   end
 end
