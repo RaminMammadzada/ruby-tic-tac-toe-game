@@ -3,7 +3,6 @@ require_relative '../lib/player'
 require_relative '../lib/game'
 
 class Main
-
   def start_game()
     puts '..:::GAME IS STARTED:::..'
     create_players
