@@ -12,6 +12,7 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 - [x] Miltestone 2 - CLI user interface is implemented.
 - [x] Miltestone 3 - Game logic is implemented and the main user interface moved to Main class.
 - [x] Miltestone 4 - Instructions and Rules for game
+- [x] Miltestone 5 - Unit Tests with Rspec for classes and methods.
 
 # Game Rules
 
