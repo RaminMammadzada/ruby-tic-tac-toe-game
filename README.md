@@ -1,12 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Microverse Ruby Project #3 -> Tic Tac Toe game (with Object Oriented Programming)
-
-# ruby-tic-tac-toe
+# Microverse Ruby Project #3 
+# Tic Tac Toe game (with Object Oriented Programming)
 
 ![screenshot](./images/output.png)
 
-In this project we will recreate the well known Tic-Tac-Toe game by using object oriented programming paradigm. We have 4 milestones as below:
+In this project we have recreated the well known Tic-Tac-Toe game by using object oriented programming paradigm. We had 5 milestones as below:
 
 - [x] Miltestone 1 - Basic initial setups and linter configurations.
 - [x] Miltestone 2 - CLI user interface is implemented.
@@ -14,7 +13,7 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 - [x] Miltestone 4 - Instructions and Rules for game
 - [x] Miltestone 5 - Unit Tests with Rspec for classes and methods.
 
-# Game Rules
+## Game Rules
 
 - Two players can start game by entering their names
 - Player names should contain at least one letter
@@ -33,40 +32,33 @@ In this project we will recreate the well known Tic-Tac-Toe game by using object
 
 [Live Demo Link](https://repl.it/@remki/ruby-tic-tac-toe-game-1#bin/main.a)
 
-## Testing the game
+## Run game
+Besides the live demo link, you can run those functions in you own local environment. 
 
-This game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. All public methods are tested.
-### Install
+Type ```./bin/main.rb``` in the root file of the project. 
 
-- In a terminal window type ```gem install rspec```
-- Once rspec install has finished, go to project directory and type ```rspec --init```
-- You will see a folder spec and a file [.rspec](.rspec)
-- Inside spec folder you'll see a [spec_helper.rb](spec/spec_helper.rb) file.
+You can also type ```ruby bin/main.rb``` in the root file of the project.
 
-### Run the test
-- Open a terminal window and type rspec
+
+## Run the tests
+All public methods are tested with Rspec.
+
+- Open a terminal window and type ```rspec```
 - All tests should be passed:
 
 ![screenshot of tests](./images/tests_screenshot.png)
 
+#### Dependency Installations
 
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Install
-Besides the live demo link, you can run those functions in you own local environment. 
-In order to run, you need to install RUBY in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.
+- In order to run, you need to install RUBY in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.
 Then you can clone the project by typing ```git clone https://github.com/RaminMammadzada/ruby-tic-tac-toe-game/tree/develop```
 
-### Run game
-Type ```./bin/main.rb``` in the root file of the project. 
-You can also type ```ruby bin/main.rb``` in the root file of the project.
 
-### Run tests
-In the terminal you just have to put the following command: 
-```rspec```
-
+- The game was tested using [RSpec](https://rspec.info/) which is a ruby testing tool. 
+  - In a terminal window type ```gem install rspec```
+  - Once rspec install has finished, go to project directory and type ```rspec --init```
+  - You will see a folder spec and a file [.rspec](.rspec)
+  - Inside spec folder you'll see a [spec_helper.rb](spec/spec_helper.rb) file.
 
 ## Authors
 
